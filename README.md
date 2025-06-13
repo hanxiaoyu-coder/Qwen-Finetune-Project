@@ -1,7 +1,7 @@
 # Qwen-Finetune-Project
 微调小模型尝试获得思维链能力
 
-# Qwen2.5-0.5B 笑话生成模型微调项目
+# Qwen2.5-0.5B 模型微调项目
 
 本项目完整记录了使用 Unsloth 框架对 Qwen2.5-0.5B 模型进行 LoRA 微调的全过程，旨在训练一个能以“链式思考”（Chain-of-Thought）模式对于一些需要一定是为能力问题生成幽默感答复的语言模型。
 
@@ -15,7 +15,7 @@
 
 您可以按照以下步骤完整复现本项目的训练过程：
 
-1.  **克隆本仓库**
+1.  **克隆本仓库并下载基础模型**
     ```bash
     git clone [https://github.com/your-username/your-repo-name.git](https://github.com/hanxiaoyu-coder/Qwen-Finetune-Project
 .git)
@@ -23,19 +23,28 @@
 
     ```
 
+   在终端中下载基础模型
+    ```bash
+  pip install "unsloth[cu121-ampere-torch240] @ git+https://github.com/unslothai/unsloth.git
+
+  huggingface-cli download unsloth/Qwen2.5-0.5B-bnb-4bit  --local-dir foundational_model/Qwen2.5-0.5B-bnb-4bit
+    ```
 2.  **创建并激活环境** (推荐使用 Conda)
+
+   注意两个关键的版本CUDA 12.1 的 Pytorch 2.4.0,否则后续大概率因为依赖问题报错，这里python版本其他也行
     ```bash
     conda create -n qwen_finetune python=3.10 -y
     conda activate qwen_finetune
     ```
 
-3.  **安装依赖**
+4.  **安装依赖**
     ```bash
     pip install -r requirements.txt
     ```
     *请确保您的环境中已正确安装支持CUDA的PyTorch版本。*
-
-4.  **运行 Jupyter Notebook**
+    特别注意transformer的版本，新版的会出问题
+    
+6.  **运行 Jupyter Notebook**
     打开并按顺序执行 `Qwen2.5-weitiaoban-3.ipynb` 中的所有代码单元。
 
 ##  B 文件结构
