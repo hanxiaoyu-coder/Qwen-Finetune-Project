@@ -1,0 +1,5 @@
+unsloth
+torch
+transformers==4.51.3
+trl
+datasets
