@@ -17,8 +17,7 @@
 
 1.  **克隆本仓库并下载基础模型**
     ```bash
-    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/hanxiaoyu-coder/Qwen-Finetune-Project
-.git)
+    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/hanxiaoyu-coder/Qwen-Finetune-Project.git)
     cd Qwen-Finetune-Project
 
     ```
