@@ -25,9 +25,10 @@
 
    在终端中下载基础模型
     ```bash
-  pip install "unsloth[cu121-ampere-torch240] @ git+https://github.com/unslothai/unsloth.git
+   pip install "unsloth[cu121-ampere-torch240] @ git+https://github.com/unslothai/unsloth.git
 
   huggingface-cli download unsloth/Qwen2.5-0.5B-bnb-4bit  --local-dir foundational_model/Qwen2.5-0.5B-bnb-4bit
+
     ```
 2.  **创建并激活环境** (推荐使用 Conda)
 
